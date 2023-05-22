@@ -1,0 +1,23 @@
+html
+!DOCTYPE html
+meta name=viewreport content="width=device-width,initial-scale=1"
+
+
+
+css
+@media (screen-width){
+    selector{
+        properties:values;
+    }
+}
+max-width :992px atleast
+
+& min-width atmost 
+
+max-width:992px and min-width:768px
+
+extra small 486px-576px
+small 576px-768px
+medium 768px-992px
+large 992-1200px,1366px
+extra large 1366px and above
