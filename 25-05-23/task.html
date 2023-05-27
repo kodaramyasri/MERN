@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+             var firstName=document.getElementById("firstname").value
+             var email=document.getElementById("email").value
+             var password=document.getElementById("password").value
+             var gender=document.getElementById("gender")
+             var male=document.getElementById("gendermale").checked
+             var female=document.getElementById("genderfemale").checked            
+             var firstNameCheck=/^[a-zA-Z]+$/
+             var emailCheck=/^[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}$/
+             var passwordCheck=/^((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
+             
+             console.log(firstName)
+             console.log(gender)
+            if(firstName=="" || firstName.length<3){
+                alert("Please enter your name")
+                return false
+             }
+            if(!firstName.match(firstNameCheck)){
+              alert("Name must carry only characters")
+              return false
+            }
+            if(email==""){
+                alert("enter email ID")
+                return false
+            }
+            if(!email.match(emailCheck)){
+                alert("provide proper email ID")
+                return false
+            }
+            if(password=="" ||password.length<6){
+                alert("please enter password")
+                return false
+            }
+            if(!password.match(passwordCheck)){
+                alert("Enter valid password")
+                return false
+            }
+            if(male==true)
+                gender="male"
+            else if(female==true)
+                 gender="female"
+            else
+                gender=null
+            return true
+            
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return check()">
+        <p><input id="firstname" placeholder="enter name"/></p>
+        <p><input id="email" placeholder="enter email"/></p>
+        <p><input id="password" placeholder="enter password"/></p>
+        <input type="password" placeholder="Confirm Password" id="confirm_password" />
+        <button type="submit" class="pure-button pure-button-primary">Confirm</button><br>
+
+        <label for="gender">select gender:</label>
+        <input type="radio" name="gender"  id="gendermale"  value="Male"/>male
+        <input type="radio" name="gender"  id="genderfemale"  value="Female"/>female<br>
+
+        <label for="state">Select a state:</label>
+        <select name="state" id="state">
+        <option value="Andhrapradesh">Andhrapradesh</option>
+        <option value="Telangana">Telangana</option>
+        <option value="srikakulam">srikakulam</option>
+        </select><br>
+
+        <button>submit</button>
+    </form>
+</body>
+</html>

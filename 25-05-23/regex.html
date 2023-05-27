@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+             var firstName=document.getElementById("firstname").value
+             var email=document.getElementById("email").value
+             var firstNameCheck=/^[a-zA-Z]+$/
+             var emailCheck=/^[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}$/
+             console.log(firstName)
+            if(firstName=="" || firstName.length<3){
+                alert("Please enter your name")
+                return false
+             }
+            if(!firstName.match(firstNameCheck)){
+              alert("Name must carry only characters")
+              return false
+            }
+            if(email==""){
+                alert("enter email ID")
+                return false
+            }
+            if(!email.match(emailCheck)){
+                alert("provide proper email ID")
+                return false
+            }
+            return true
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return check()">
+        <p><input id="firstname" placeholder="enter name"/></p>
+        <p><input id="email" placeholder="enter email"/></p>
+        <button>submit</button>
+    </form>
+</body>
+</html>
